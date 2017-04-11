@@ -21,26 +21,12 @@ security:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
-
-        main:
-            anonymous: ~
-            # activate different ways to authenticate
-
-            # http://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
-            #http_basic: ~
-
-            # http://symfony.com/doc/current/cookbook/security/form_login_setup.html
-            #form_login: ~
-            http_basic: ~
-            logout: true
-            logout:
-                path:   /logout
-                target: /users
-                invalidate_session: true
-                delete_cookies:
-                    a: { path: null, domain: null }
-                    b: { path: null, domain: null }
-            anonymous: ~
+        general_area:
+                pattern:  ^
+                anonymous: ~
+                logout:
+                     path:   /logout
+                     target: home
     access_control:
     # require ROLE_ADMIN for /admin*
 #        - { path: ^/admin/users, roles: ROLE_SUPER_ADMIN }

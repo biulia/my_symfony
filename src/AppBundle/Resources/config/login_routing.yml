@@ -11,7 +11,6 @@ users:
     defaults: { _controller: 'AppBundle:Login:users'}
 logout:
     path: /logout
-    defaults: { _controller: 'AppBundle:Login:logout'}
 home:
     path: /home
     defaults: { _controller: 'AppBundle:Default:index'}
