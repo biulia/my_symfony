@@ -21,6 +21,11 @@ security:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
+
+        default:
+               pattern:  ^/admin
+               anonymous: ~
+               http_basic: ~
         general_area:
                 pattern:  ^
                 anonymous: ~
