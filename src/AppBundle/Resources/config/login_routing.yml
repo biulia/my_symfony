@@ -1,0 +1,17 @@
+user:
+    path: /user
+    defaults: { _controller: 'AppBundle:Login:user'}
+
+admin:
+    path: /admin
+    defaults: { _controller: 'AppBundle:Login:admin'}
+
+users:
+    path: /users
+    defaults: { _controller: 'AppBundle:Login:users'}
+logout:
+    path: /logout
+    defaults: { _controller: 'AppBundle:Login:logout'}
+home:
+    path: /home
+    defaults: { _controller: 'AppBundle:Default:index'}

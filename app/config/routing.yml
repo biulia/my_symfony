@@ -1,0 +1,6 @@
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+login:
+    resource: '@AppBundle/Resources/config/login_routing.yml'
+
