@@ -3,6 +3,7 @@ namespace AppBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use AppBundle\Entity\Admin;
 
 
 class LoginController extends Controller
@@ -22,10 +23,21 @@ class LoginController extends Controller
             'error'         => $error,
         ));
     }
-    public function adminAction()
+    public function adminAction(Request $request)
     {
+        $admin = new Admin();
+        echo '<pre>';
+        var_dump($request->request->get('username'));die;
+        $authenticationUtils = $this->get('security.authentication_utils');
+        $error = $authenticationUtils->getLastAuthenticationError();
+        $lastUsername = $authenticationUtils->getLastUsername();
 
-        return new Response('<html><body>Admin page!</body></html>');
+//        var_dump($authenticationUtils);die;
+        return $this->render('AppBundle::login.html.twig', array(
+            'last_username' => $lastUsername,
+            'error'         => $error,
+        ));
+//        return new Response('<html><body>Admin page!</body></html>');
 
     }
     public function usersAction()

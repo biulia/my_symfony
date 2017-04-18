@@ -23,13 +23,16 @@ security:
             security: false
 
         default:
-               pattern:  ^/admin
                anonymous: ~
+#               pattern:  ^/admin
                http_basic: ~
-        general_area:
-                pattern:  ^
-                anonymous: ~
-                logout:
+        admin:
+               pattern:  ^
+               anonymous: ~
+               form_login:
+                   login_path: admin
+                   check_path: admin
+               logout:
                      path:   /logout
                      target: home
     access_control:

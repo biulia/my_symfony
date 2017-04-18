@@ -1,0 +1,32 @@
+<?PHP
+// src/AppBundle/Entity/Product.php
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="admin")
+ */
+
+class Admin
+{
+    /**
+     * @ORM\Column(type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+    /**
+     * @ORM\Column(type="string", length=60, unique=true)
+     */
+    private $username;
+    /**
+     * @ORM\Column(type="string", length=60, unique=true)
+     */
+    private $email;
+    /**
+     * @ORM\Column(type="string", length=64)
+     */
+    private $password;
+}
