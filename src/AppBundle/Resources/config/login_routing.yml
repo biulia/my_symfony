@@ -9,8 +9,10 @@ admin:
 users:
     path: /users
     defaults: { _controller: 'AppBundle:Login:users'}
+
 logout:
     path: /logout
+
 home:
     path: /home
     defaults: { _controller: 'AppBundle:Default:index'}

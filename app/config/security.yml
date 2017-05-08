@@ -24,14 +24,21 @@ security:
 
         default:
                anonymous: ~
-#               pattern:  ^/admin
+               pattern:  ^/admin
                http_basic: ~
         admin:
-               pattern:  ^
+               pattern:  ^/
+               anonymous: ~
+               logout:
+                     path:   /logout
+                     target: home
+        user:
+               pattern:  ^/user
+#               provider: admin
                anonymous: ~
                form_login:
-                   login_path: admin
-                   check_path: admin
+                   check_path: /user
+                   login_path: /user
                logout:
                      path:   /logout
                      target: home

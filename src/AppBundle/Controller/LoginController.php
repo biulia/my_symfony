@@ -17,6 +17,7 @@ class LoginController extends Controller
 
         // last username entered by the user
         $lastUsername = $authenticationUtils->getLastUsername();
+        var_dump($request->request->get('username'));die;
         // last username entered by the user
         return $this->render('AppBundle::login.html.twig', array(
             'last_username' => $lastUsername,
@@ -25,19 +26,8 @@ class LoginController extends Controller
     }
     public function adminAction(Request $request)
     {
-        $admin = new Admin();
-        echo '<pre>';
-        var_dump($request->request->get('username'));die;
-        $authenticationUtils = $this->get('security.authentication_utils');
-        $error = $authenticationUtils->getLastAuthenticationError();
-        $lastUsername = $authenticationUtils->getLastUsername();
 
-//        var_dump($authenticationUtils);die;
-        return $this->render('AppBundle::login.html.twig', array(
-            'last_username' => $lastUsername,
-            'error'         => $error,
-        ));
-//        return new Response('<html><body>Admin page!</body></html>');
+        return new Response('<html><body>Admin page!</body></html>');
 
     }
     public function usersAction()
